@@ -3,6 +3,12 @@
 	outline: red dashed 2px;
 } */
 
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 .homepage-hero-boudle {
 	display: flex;
 	flex-direction: column;
@@ -10,10 +16,30 @@
 	align-items: center;
 }
 
+.homepage-hero-boudle h1 {
+	margin: 25px;
+	padding: 0 25px;
+	/* border-style: dashed; */
+	border-radius: 25px;
+	border-color: #363636;
+	color: black;
+}
+
+.welcomeimage {
+	border-radius: 50%;
+}
+.welcomeimage1 {
+	border-radius: 0%;
+}
+
 .custom-footer {
 	background-color: #363636;
 	color: white;
 	margin-top: 2rem;
+}
+
+#welcomepage {
+	padding: 10px 25px;
 }
 
 #burgerlogoimage {
