@@ -1,4 +1,21 @@
-/* REMOVE THIS AND ADD YOUR OWN CSS AS NEEDED */
+/* USE THIS TO HELP VISUALIZE DIVS */
 /* * {
 	outline: red dashed 2px;
 } */
+
+.homepage-hero-boudle {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.custom-footer {
+	background-color: #363636;
+	color: white;
+	margin-top: 2rem;
+}
+
+#burgerlogoimage {
+	max-height: 3.5rem;
+}
