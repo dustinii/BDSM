@@ -1,7 +1,13 @@
 <section class="section">
   <div class="container">
-    <h1 class="title">Login</h1>
-    <form action="/login" method="post">
+    <h1 class="title">Sign Up</h1>
+    <form action="/signup" method="post">
+      <div class="field">
+        <label class="label" for="name">Name</label>
+        <div class="control">
+          <input class="input" type="text" id="name" name="name" required>
+        </div>
+      </div>
       <div class="field">
         <label class="label" for="email">Email</label>
         <div class="control">
@@ -15,9 +21,9 @@
         </div>
       </div>
       <div class="control">
-        <button class="button is-link">Login</button>
+        <button class="button is-link">Sign Up</button>
       </div>
     </form>
-    <p>Don't have an account? <a href="/signup">Sign up here</a>.</p>
+    <p>Already have an account? <a href="/login">Login here</a>.</p>
   </div>
 </section>
