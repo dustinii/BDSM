@@ -23,7 +23,7 @@ body {
 	/* Increase the scale on hover */
 	transition: transform 0.3s ease;
 	/* Add a smooth transition effect */
-	cursor: pointer;
+	cursor: default;
 	z-index: 1;
 }
 
