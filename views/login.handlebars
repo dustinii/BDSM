@@ -1,23 +1,32 @@
 <section class="section">
   <div class="container">
-    <h1 class="title">Login</h1>
-    <form action="/login" method="post">
-      <div class="field">
-        <label class="label" for="email">Email</label>
-        <div class="control">
-          <input class="input" type="email" id="email" name="email" required>
-        </div>
+    <div class="columns is-vcentered">
+      <div class="column is-4">
+        <h1 class="title">Login</h1>
+        <form action="/login" method="post">
+          <div class="field">
+            <label class="label" for="email">Email</label>
+            <div class="control">
+              <input class="input" type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label" for="password">Password</label>
+            <div class="control">
+              <input class="input" type="password" id="password" name="password" required>
+            </div>
+          </div>
+          <div class="control">
+            <button class="button is-link">Login</button>
+          </div>
+        </form>
+        <p>Don't have an account? <a href="/signup">Sign up here</a>.</p>
       </div>
-      <div class="field">
-        <label class="label" for="password">Password</label>
-        <div class="control">
-          <input class="input" type="password" id="password" name="password" required>
-        </div>
+      <div class="column is-8">
+        <figure class="image">
+          <img src="/images/others/login.jpg" alt="login image">
+        </figure>
       </div>
-      <div class="control">
-        <button class="button is-link">Login</button>
-      </div>
-    </form>
-    <p>Don't have an account? <a href="/signup">Sign up here</a>.</p>
+    </div>
   </div>
 </section>
