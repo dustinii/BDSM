@@ -30,7 +30,6 @@ body {
 .homepage-hero-boudle h1 {
 	margin: 25px;
 	padding: 0 25px;
-	/* border-style: dashed; */
 	border-radius: 25px;
 	border-color: #363636;
 	color: black;
@@ -51,8 +50,9 @@ body {
 }
 
 #developerAdjustment {
-	margin-top: 50px; 
+	margin-top: 50px;
 }
+
 #welcomepage {
 	padding: 10px 25px;
 }

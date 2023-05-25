@@ -1,29 +1,40 @@
 <section class="section">
   <div class="container">
-    <h1 class="title">Sign Up</h1>
-    <form action="/signup" method="post">
-      <div class="field">
-        <label class="label" for="name">Name</label>
-        <div class="control">
-          <input class="input" type="text" id="name" name="name" required>
-        </div>
+    <div class="columns is-vcentered">
+      <div class="column is-4">
+        <h1 class="title">Sign Up</h1>
+        <form action="/signup" method="post">
+          <div class="field">
+            <label class="label" for="name">Name</label>
+            <div class="control">
+              <input class="input" type="text" id="name" name="name" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label" for="email">Email</label>
+            <div class="control">
+              <input class="input" type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label" for="password">Password</label>
+            <div class="control">
+              <input class="input" type="password" id="password" name="password" required>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <button class="button is-link">Sign Up</button>
+            </div>
+          </div>
+        </form>
+        <p>Already have an account? <a href="/login">Login here</a>.</p>
       </div>
-      <div class="field">
-        <label class="label" for="email">Email</label>
-        <div class="control">
-          <input class="input" type="email" id="email" name="email" required>
-        </div>
+      <div class="column is-8">
+        <figure class="image">
+          <img src="/images/others/billboard.png" alt="Placeholder image">
+        </figure>
       </div>
-      <div class="field">
-        <label class="label" for="password">Password</label>
-        <div class="control">
-          <input class="input" type="password" id="password" name="password" required>
-        </div>
-      </div>
-      <div class="control">
-        <button class="button is-link">Sign Up</button>
-      </div>
-    </form>
-    <p>Already have an account? <a href="/login">Login here</a>.</p>
+    </div>
   </div>
 </section>
