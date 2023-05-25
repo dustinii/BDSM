@@ -1,3 +1,6 @@
 node_modules/
 .env
 .DS_Store
+clipboard.md
+/logs/access.log
+package-lock.json

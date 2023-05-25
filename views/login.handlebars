@@ -1,34 +1,61 @@
-<h1>
-  This is the login/signup page.
-</h1>
+<section class="section">
+  <div class="container">
+    <h1 class="title">
+      This is the login/signup page.
+    </h1>
 
-<h2>Login</h2>
+    <h2 class="subtitle">Login</h2>
 
-<form class="login-form">
-  <label for="email-login">email:</label>
-  <input type="text" id="email-login" />
+    <form class="login-form">
+      <div class="field">
+        <label class="label" for="email-login">Email:</label>
+        <div class="control">
+          <input class="input" type="text" id="email-login" />
+        </div>
+      </div>
 
-  <label for="password-login">password:</label>
-  <input type="password" id="password-login" />
+      <div class="field">
+        <label class="label" for="password-login">Password:</label>
+        <div class="control">
+          <input class="input" type="password" id="password-login" />
+        </div>
+      </div>
 
-  <button type="submit">login</button>
-</form>
+      <div class="control">
+        <button class="button is-primary" type="submit">Login</button>
+      </div>
+    </form>
 
-<h2>Signup</h2>
+    <h2 class="subtitle">Signup</h2>
 
-<form class="signup-form">
-  <label for="name-signup">name:</label>
-  <input type="text" id="name-signup" />
+    <form class="signup-form">
+      <div class="field">
+        <label class="label" for="name-signup">Name:</label>
+        <div class="control">
+          <input class="input" type="text" id="name-signup" />
+        </div>
+      </div>
 
-  <label for="email-signup">email:</label>
-  <input type="text" id="email-signup" />
+      <div class="field">
+        <label class="label" for="email-signup">Email:</label>
+        <div class="control">
+          <input class="input" type="text" id="email-signup" />
+        </div>
+      </div>
 
-  <label for="password-signup">password:</label>
-  <input type="password" id="password-signup" />
+      <div class="field">
+        <label class="label" for="password-signup">Password:</label>
+        <div class="control">
+          <input class="input" type="password" id="password-signup" />
+        </div>
+      </div>
 
-  <button type="submit">signup</button>
-</form>
+      <div class="control">
+        <button class="button is-primary" type="submit">Signup</button>
+      </div>
+    </form>
 
-
+  </div>
+</section>
 
 <script src="./js/login.js"></script>

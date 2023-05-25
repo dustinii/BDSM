@@ -7,9 +7,9 @@ Welcome to "Burgers Delivered by Space Monkeys" (BDSM)! This is a whimsical and 
 ## Features
 
 - Browse through a variety of space-themed burger restaurants and their menus.
-- Customize your burger with your favorite toppings and add-ons.
+- Choose your burger with your favorite toppings and add-ons.
 - Place orders and track them in real-time with our fun and interactive order tracking system.
-- Rate and review your orders and burgers to provide valuable feedback.
+- Rate and review your burgers to provide valuable feedback.
 - Enjoy a secure user authentication system for account registration and login.
 - Explore your order history and manage your profile preferences.
 
@@ -44,7 +44,7 @@ The project follows the MVC (Model-View-Controller) paradigm for organizing the 
 - `public`: Includes static assets such as CSS and JavaScript files.
 - `routes`: Contains route files defining the API endpoints and their corresponding controllers.
 - `views`: Contains the Handlebars.js templates for rendering the HTML pages and components.
-- `app.js`: The main entry point of the application.
+- `server.js`: The main entry point of the application.
 - `package.json`: Includes project dependencies and scripts.
 
 ## Contributing
