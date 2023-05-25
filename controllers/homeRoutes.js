@@ -28,4 +28,9 @@ router.get('/signup', (req, res) => {
 });
 
 
+router.get('/developers', (req, res) => {
+  res.render('developers');
+});
+
+
 module.exports = router;
