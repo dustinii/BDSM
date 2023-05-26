@@ -15,9 +15,9 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.post('/review', async (req, res) => {
+router.post('/spacemonkeys', async (req, res) => {
   try {
-    const reviewData = await review.findOne({ where: { id: req.body.courier } });
+    const courierData = await review.findOne({ where: { id: req.body.courier } });
   
     if (!reviewData) {
       res

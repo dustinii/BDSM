@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Restaurant } = require('../../models');
+const { Restaurants } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
-    const restaurantData = await Restaurant.create(req.body);
+    const restaurantsData = await Restaurants.create(req.body);
 
     req.session.save(() => {
-      req.session.Restaurant_id = restaurantData.id;
+      req.session.Restaurant_id = restauranstData.id;
 
       res.status(200).json(restaurantData);
     });
@@ -15,11 +15,11 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.post('/restaurant', async (req, res) => {
+router.post('/browse', async (req, res) => {
   try {
-    const restaurantData = await Restaurant.findOne({ where: { id: req.body.restaurant } });
+    const restaurantsData = await Restaurants.findOne({ where: { id: req.body.restaurants } });
   
-    if (!restuarantData) {
+    if (!restuarantsData) {
       res
         .status(400)
         .json({ message: 'No restaurant found.' });
