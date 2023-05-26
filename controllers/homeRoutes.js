@@ -35,5 +35,9 @@ router.get('/developers', async (req, res) => {
   res.render('developers', { developers });
 });
 
+router.get('/browse', (req, res) => {
+  res.render('browse');
+});
+
 
 module.exports = router;
