@@ -2,5 +2,5 @@ node_modules/
 .env
 .DS_Store
 clipboard.md
-logs/
+logs/access.log
 package-lock.json

@@ -6,9 +6,9 @@ router.post('/', async (req, res) => {
     const restaurantsData = await Restaurants.create(req.body);
 
     req.session.save(() => {
-      req.session.Restaurant_id = restauranstData.id;
+      req.session.Restaurant_id = restaurantsData.id;
 
-      res.status(200).json(restaurantData);
+      res.status(200).json(restaurantsData);
     });
   } catch (err) {
     res.status(400).json(err);
