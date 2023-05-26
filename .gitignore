@@ -4,3 +4,4 @@ node_modules/
 clipboard.md
 logs/
 package-lock.json
+*.log
