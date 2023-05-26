@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// Class Restaurant for restaurant info
 class Restaurant extends Model {}
 
 Restaurant.init(
