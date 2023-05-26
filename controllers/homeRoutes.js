@@ -32,5 +32,9 @@ router.get('/developers', (req, res) => {
   res.render('developers');
 });
 
+router.get('/browse', (req, res) => {
+  res.render('browse');
+});
+
 
 module.exports = router;

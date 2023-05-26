@@ -1,0 +1,9 @@
+GET / 200 3009 - 36.900 ms
+GET /favicon.ico 404 150 - 17.969 ms
+GET /browse 404 145 - 2.935 ms
+GET /browse 200 2953 - 116.793 ms
+GET /browse 200 4174 - 48.989 ms
+GET /browse 304 - - 49.128 ms
+GET /spacemonkeys 404 151 - 8.990 ms
+GET /browse 304 - - 8.245 ms
+GET /browse 200 5052 - 10.219 ms
