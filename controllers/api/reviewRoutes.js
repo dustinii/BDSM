@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.post('/about', async (req, res) => {
+router.post('/reviews', async (req, res) => {
   try {
     const reviewData = await review.findOne({ where: { id: req.body.review } });
   
