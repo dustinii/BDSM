@@ -3,7 +3,7 @@ const userRoutes = require('./userRoutes');
 const restaurantsRoutes = require('./restaurantsRoutes');
 const orderRoutes = require('./orderRoutes');
 const spaceMonkeyRoutes = require('./spaceMonkeyRoutes');
-// const reviewRoutes = require("./courierRoutes");
+const reviewRoutes = require('./reviewRoutes');
 
 
 

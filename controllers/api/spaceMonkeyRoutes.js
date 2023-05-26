@@ -17,9 +17,9 @@ router.post('/', async (req, res) => {
 
 router.post('/spacemonkeys', async (req, res) => {
   try {
-    const courierData = await review.findOne({ where: { id: req.body.courier } });
+    const courierData = await review.findOne({ where: { id: req.body.spaceMonkey } });
   
-    if (!reviewData) {
+    if (!spaceMonkeyData) {
       res
         .status(400)
         .json({ message: 'No space monkey found.' });

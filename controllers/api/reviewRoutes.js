@@ -1,34 +1,34 @@
-// const router = require('express').Router();
-// const { Review } = require('../../models');
+const router = require('express').Router();
+const { Review } = require('../../models');
 
-// router.post('/', async (req, res) => {
-//   try {
-//     const reviewData = await Review.create(req.body);
+router.post('/', async (req, res) => {
+  try {
+    const reviewData = await Review.create(req.body);
 
-//     req.session.save(() => {
-//       req.session.review_id = reviewData.id;
+    req.session.save(() => {
+      req.session.review_id = reviewData.id;
 
-//       res.status(200).json(reviewData);
-//     });
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
+      res.status(200).json(reviewData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
-// router.post('/about', async (req, res) => {
-//   try {
-//     const reviewData = await review.findOne({ where: { id: req.body.review } });
+router.post('/reviews', async (req, res) => {
+  try {
+    const reviewData = await review.findOne({ where: { id: req.body.review } });
   
-//     if (!restuarantData) {
-//       res
-//         .status(400)
-//         .json({ message: 'No reviews found.' });
-//       return;
-//     }
+    if (!restuarantData) {
+      res
+        .status(400)
+        .json({ message: 'No reviews found.' });
+      return;
+    }
   
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
-// module.exports = router;
+module.exports = router;
