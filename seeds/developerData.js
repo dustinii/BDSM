@@ -27,7 +27,7 @@ const developerData = [
   },
   {
     name: 'Brian',
-    image: '/images/developers/profbrian.jpg',
+    image: '/images/developers/profbrian.png',
     github_link: 'https://github.com/Brian-Autieri',
     bio: 'Back-end specialist with a focus on database efficiency.',
   },
