@@ -1,28 +1,28 @@
 const router = require('express').Router();
-const { Restaurant } = require('../../models');
+const { Order } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
-    const restaurantData = await Restaurant.create(req.body);
+    const orderData = await order.create(req.body);
 
     req.session.save(() => {
-      req.session.Restaurant_id = restaurantData.id;
+      req.session.Order_id = OrderData.id;
 
-      res.status(200).json(restaurantData);
+      res.status(200).json(OrderData);
     });
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.post('/restaurant', async (req, res) => {
+router.post('/order', async (req, res) => {
   try {
-    const restaurantData = await Restaurant.findOne({ where: { id: req.body.restaurant } });
+    const orderData = await Order.findOne({ where: { id: req.body.order } });
   
-    if (!restuarantData) {
+    if (!orderData) {
       res
         .status(400)
-        .json({ message: 'No restaurant found.' });
+        .json({ message: 'No order found.' });
       return;
     }
   
