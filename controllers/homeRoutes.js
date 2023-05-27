@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Developer } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -28,8 +29,14 @@ router.get('/signup', (req, res) => {
 });
 
 
-router.get('/developers', (req, res) => {
-  res.render('developers');
+router.get('/developers', async (req, res) => {
+  const dbres = await Developer.findAll();
+  const developers = dbres.map((developer) => developer.get({ plain: true }));
+  res.render('developers', { developers });
+});
+
+router.get('/browse', (req, res) => {
+  res.render('browse');
 });
 
 
