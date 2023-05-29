@@ -1,26 +1,24 @@
- {{!-- <h1 class="title has-text-centered">Our Handsome Monkeys</h1>
+
+<h1 class="title has-text-centered">Our Handsome Monkeys</h1>
 <section class="section">
   <div class="container">
-
-    <div class="columns is-multiline">
-      {{#each developers as |developer|}}
-      <div class="column is-one-third">
+    <div class="columns is-mobile">
+      {{#each spacemonkeys as |spacemonkey|}}
+      <div class="column is-one-fifth">
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by4">
-              <img src="{{developer.image}}" alt="{{developer.name}}'s Image">
+              <img src="{{spacemonkey.image}}" alt="{{spacemonkey.name}}'s Image">
             </figure>
           </div>
           <div class="card-content">
             <div class="media">
               <div class="media-content">
-                <p class="title is-4">{{developer.name}}</p>
+                <p class="title is-4">{{spacemonkey.name}}</p>
               </div>
             </div>
             <div class="content">
-              <a href="{{developer.github}}" target="_blank">
-                <i class="fab fa-github"></i> GitHub Profile
-              </a>
+              <p>{{spacemonkey.bio}}</p>
             </div>
           </div>
         </div>
@@ -29,4 +27,4 @@
     </div>
 
   </div>
-</section> --}}
+</section>
