@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Developer, Spacemonkey } = require('../models');
+const { Developer, Spacemonkey, Restaurant } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -40,8 +40,18 @@ router.get('/developers', async (req, res) => {
   res.render('developers', { developers });
 });
 
-router.get('/browse', (req, res) => {
-  res.render('browse');
+router.get('/browse', async (req, res) => {
+  try {
+    const restaurantData = await Restaurant.findAll();
+    const restaurants = restaurantData.map(restaurant => restaurant.get({
+      plain:true
+    }));
+    console.log(restaurants);
+    res.render('browse', {restaurants});
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+  
 });
 
 
