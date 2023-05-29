@@ -21,7 +21,7 @@ Burger.init(
       allowNull: true,
     },
     burgerDetails: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
   },

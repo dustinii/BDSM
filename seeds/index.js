@@ -1,6 +1,7 @@
 const sequelize = require('../config/connection');
 const seedDevelopers = require('./developerData');
 const seedRestaurants = require('./restaurantData');
+const seedBurgers = require('./burgerData');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
