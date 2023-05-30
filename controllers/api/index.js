@@ -5,8 +5,7 @@ const orderRoutes = require('./orderRoutes');
 const spaceMonkeyRoutes = require('./spaceMonkeyRoutes');
 const reviewRoutes = require('./reviewRoutes');
 
-
-
 router.use('/users', userRoutes);
+router.use('/spacemonkeys', spaceMonkeyRoutes);
 
 module.exports = router;

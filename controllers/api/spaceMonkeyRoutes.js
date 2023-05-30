@@ -3,13 +3,11 @@ const { spaceMonkey } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
-    const spaceMonkeyData = await courier.create(req.body);
+    const spacemonkeyData = await Spacemonkey.findAll();
+    const spacemonkeys = spacemonkeyData.map((spacemonkey) => spacemonkey.get({ plain: true }));
 
-    req.session.save(() => {
-      req.session.spaceMonkey_id = spaceMonkey.id;
-
-      res.status(200).json(spaceMonkeyData);
-    });
+    //rendering spacemonkey.handlebars view
+    res.render('spacemonkey', { spacemonkeys });
   } catch (err) {
     res.status(400).json(err);
   }
