@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { Developer, Spacemonkey, Restaurant } = require('../models');
+const { restart } = require('nodemon');
+const { Developer, Spacemonkey, Restaurant, Burger } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -52,6 +53,22 @@ router.get('/browse', async (req, res) => {
     res.status(500).json(err.message);
   }
   
+});
+
+router.get('/order/:restaurantId', async (req, res) => {
+  try {
+    const orderData = await Burger.findAll({
+      where: {
+        id: req.params.restaurantId
+      }
+    });
+    const orders = orderData.map(order => order.get({
+      plain: true
+    }));
+    res.render('order', {orders});
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
 });
 
 router.get('/about', (req, res) => {

@@ -8,6 +8,7 @@
 <div class="columns">
   {{#each restaurants as |restaurant|}}
     <div class="column">
+      <a href="/order/{{restaurant.id}}">
         <div class="card">
             <div class="card-image">
                 <figure class="image is-4by3">
@@ -26,8 +27,14 @@
                 </div>
             </div>
         </div>
+      </a>
     </div>
     {{/each}}
+    </div>
+
+    <script src="/js/browse.js"></script>
+
+
     {{!-- <div class="column">
         <div class="card">
   <div class="card-image">
