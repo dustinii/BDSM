@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
 
 router.post('/spacemonkeys', async (req, res) => {
   try {
-    const courierData = await review.findOne({ where: { id: req.body.spaceMonkey } });
+    const spaceMonkeyData = await review.findOne({ where: { id: req.body.spaceMonkey } });
   
     if (!spaceMonkeyData) {
       res

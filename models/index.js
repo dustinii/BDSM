@@ -5,6 +5,8 @@ const Restaurant = require('./Restaurant');
 const Burger = require('./Burger');
 const Review = require('./review');
 
+Review;
+
 Restaurant.hasMany(Burger, {
   foreignKey: 'restaurantId'
 });
@@ -12,6 +14,5 @@ Restaurant.hasMany(Burger, {
 Burger.belongsTo(Restaurant, {
   foreignKey: 'restaurantId'
 });
-
 
 module.exports = { User, Developer, Spacemonkey, Restaurant, Burger, Review };
