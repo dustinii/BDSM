@@ -8,7 +8,7 @@
 Welcome to "Burgers Delivered by Space Monkeys" (BDSM)! This is a whimsical and interactive web application that allows users to order delicious burgers delivered by our adorable space monkey couriers.
 
 ## SCREENSHOT
-!(screenshot.jpg)
+![Screenshot](screenshot.jpg)
 
 ## TABLE OF CONTENTS
 
