@@ -19,7 +19,7 @@ router.post('/reviews', async (req, res) => {
   try {
     const reviewData = await Review.findOne({ where: { id: req.body.review } });
   
-    if (!restaurantData) {
+    if (!reviewData) {
       res
         .status(400)
         .json({ message: 'No reviews found.' });
