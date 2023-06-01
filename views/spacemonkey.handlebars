@@ -1,23 +1,23 @@
 
-<h1 class="title has-text-centered">Our Handsome Monkeys</h1>
+<h1 class="title is-light has-text-centered toptitle">| Our Handsome Monkeys |</h1>
 <section class="section">
   <div class="container">
     <div class="columns is-mobile">
       {{#each spacemonkeys as |spacemonkey|}}
-      <div class="column is-one-fifth">
-        <div class="card">
+      <div class="column is-centered is-one-fifth">
+        <div class="card card-fixed-height">
           <div class="card-image">
             <figure class="image is-4by4">
               <img src="{{spacemonkey.image}}" alt="{{spacemonkey.name}}'s Image">
             </figure>
           </div>
-          <div class="card-content">
+          <div class="card-content has-text-centered">
             <div class="media">
               <div class="media-content">
                 <p class="title is-4">{{spacemonkey.name}}</p>
               </div>
             </div>
-            <div class="content">
+            <div class="content is-centered">
               <p>{{spacemonkey.bio}}</p>
             </div>
           </div>

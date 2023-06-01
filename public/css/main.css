@@ -4,9 +4,28 @@
 } */
 
 body {
+	background: linear-gradient(to top, #f5f5f5, #363636);
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+.about {
+	color: white
+}
+
+.toptitle {
+	color: white;
+}
+
+.navbar::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background: linear-gradient(to right, white, #363636);
 }
 
 .homepage-hero-boudle {
@@ -16,10 +35,27 @@ body {
 	align-items: center;
 }
 
+.card-fixed-height {
+	height: 550px;
+	display: flex;
+	flex-direction: column;
+}
+
+.card-footer {
+	justify-content: center;
+	align-items: center;
+}
+
+.burger-fixed-height {
+	height: 570px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
 
 .card-image:hover {
 	border: 4px solid #213a5c;
-	transform: scale(2);
+	transform: scale(1.5);
 	/* Increase the scale on hover */
 	transition: transform 0.3s ease;
 	/* Add a smooth transition effect */
@@ -32,7 +68,7 @@ body {
 	padding: 0 25px;
 	border-radius: 25px;
 	border-color: #363636;
-	color: black;
+	color: whitesmoke;
 }
 
 .welcomeimage {
