@@ -11,13 +11,19 @@ Review.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING,
+    burgerId: {
+      type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'burger'
+      }
     },
-    reviewDetails: {
-      type: DataTypes.TEXT,
+    userId: {
+      type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'user'
+      }
     },
   },
   {

@@ -3,23 +3,19 @@ const { Review } = require('../models');
 const reviewData = [
   {
     name:'',
-    reviewDetails:'',
+    burgerId: 1
   },
   {
-    name:'',
-    reviewDetails:'',
+    review:'',
   },
   {
-    name:'',
-    reviewDetails:'',
+    review:'',
   },
   {
-    name:'',
-    reviewDetails:'',
+    review:'',
   },
   {
-    name:'',
-    reviewDetails:'',
+    review:'',
   },
 ];
 
