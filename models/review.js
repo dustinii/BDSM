@@ -25,6 +25,10 @@ Review.init(
         model: 'user'
       }
     },
+    reviewDetails: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    }
   },
   {
     sequelize,
