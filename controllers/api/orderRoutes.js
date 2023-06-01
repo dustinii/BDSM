@@ -3,6 +3,12 @@ const { Order } = require('../../models');
 
 router.get('/:id', async (req, res) => {
   try {
+    const orderData = await Order.findall();
+    const order = orderData.map((order)=> 
+      order.get({plain : true}));
+
+    res.render('order', {order});
+
     const orderData = await Order.findByPk(req.params.id, {
       include: [{ model: Burger }, { model: Restaurant }],
     });
@@ -27,7 +33,7 @@ router.post('/', async (req, res) => {
 
     res.status(200).json(newOrder);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
 
