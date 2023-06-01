@@ -1,26 +1,27 @@
-<h1 class="title has-text-centered">Our Amazing Developers</h1>
+<h1 class="title has-text-centered toptitle">| Our Amazing Developers |</h1>
 <section class="section">
   <div class="container">
     <div class="columns is-mobile">
       {{#each developers as |developer|}}
-      <div class="column is-one-fifth">
-        <div class="card">
+      <div class="column is-centered is-one-fifth">
+        <div class="card card-fixed-height">
           <div class="card-image">
             <figure class="image is-4by4">
               <img src="{{developer.image}}" alt="{{developer.name}}'s Image">
             </figure>
           </div>
-          <div class="card-content">
+          <div class="card-content has-text-centered">
             <div class="media">
               <div class="media-content">
                 <p class="title is-4">{{developer.name}}</p>
               </div>
             </div>
-            <div class="content">
+            <div class="content is-centered">
               <p>{{developer.bio}}</p>
-              <a href="{{developer.github}}" target="_blank">
-                <i class="fab fa-github"></i> GitHub Profile
-              </a>
+              <footer class="content is-centered card-footer">
+              <a href="{{developer.github_link}}" target="_blank">
+                <i class="fab fa-github"></i>GitHub</a>
+              </footer>
             </div>
           </div>
         </div>
