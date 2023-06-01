@@ -1,0 +1,29 @@
+<h1 class="title">Select your SpaceMonkey</h1>
+
+<div class="columns">
+    {{#each spacemonkeys as |spacemonkey|}}
+    <div class="column">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by4">
+                    <img src="{{spacemonkey.image}}" alt="SpaceMonkey image">
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4">{{spacemonkey.name}}</p>
+                    </div>
+                </div>
+
+                <div class="content">
+                    {{spacemonkey.bio}}
+                </div>
+            </div>
+            <button data-id="{{spacemonkey.id}}" class="button is-primary select-monkey-button">Select</button>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+<script src="/js/selectMonkey.js"></script>

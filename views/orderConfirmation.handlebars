@@ -1,0 +1,13 @@
+<section class="section">
+    <div class="container">
+        <h1 class="title">Order Confirmation</h1>
+        <div class="content">
+            <p>Thank you for your order! Your burger is being prepared and will be delivered by {{spacemonkey.name}}.</p>
+            <img src="{{spacemonkey.image}}" alt="{{spacemonkey.name}}">
+            <p>{{spacemonkey.bio}}</p>
+            <button class="button is-primary" onclick="window.location.href='/orders/tracking'">Track My Order</button>
+        </div>
+    </div>
+</section>
+
+<script src="/js/confirmation.js"></script>
