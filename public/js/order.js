@@ -1,15 +1,16 @@
-const order = async (burgerId) => {
-  const response = await fetch(`/api/orders/${burgerId}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    }
+document.querySelectorAll('.order-button').forEach(button => {
+  button.addEventListener('click', (e) => {
+    const selectedBurgerid = e.target.getAttribute('data-id');
+    window.location.href = `/chooseSpacemonkey?burger_id=${selectedBurgerid}`;
   });
-  if (response.ok) {
-    console.log('Order placed');
-  } else {
-    console.log('Order failed');
-  }
-};
+});
 
 const orderBtns = document.querySelectorAll('.button');
+
+orderBtns.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    const burgerId = e.target.dataset.id;
+    localStorage.setItem('burgerId', burgerId);
+    window.location.href = '/selectMonkey';
+  });
+});

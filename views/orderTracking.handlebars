@@ -1,0 +1,15 @@
+<section class="section">
+    <div class="container">
+        <h1 class="title">Order Tracking</h1>
+        <div class="content">
+            <p>Your order is on its way! {{spacemonkey.name}} is currently delivering your order.</p>
+            <img src="{{spacemonkey.image}}" alt="{{spacemonkey.name}}">
+        </div>
+    </div>
+</section>
+
+<script>
+    setTimeout(() => {
+        window.location.href = '/orders/deliveryConfirmation';
+    }, 5000);
+</script>

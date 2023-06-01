@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { restart } = require('nodemon');
-const { Developer, Spacemonkey, Restaurant, Burger } = require('../models');
+const { Developer, Spacemonkey, Restaurant, Burger, Order } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -53,6 +53,32 @@ router.get('/browse', async (req, res) => {
     res.status(500).json(err.message);
   }
   
+});
+
+// Endpoint to render the selectMonkey page with all SpaceMonkeys
+router.get('/selectMonkey', async (req, res) => {
+  const dbres = await Spacemonkey.findAll();
+  const spacemonkeys = dbres.map((spacemonkey) => spacemonkey.get({ plain: true }));
+  res.render('selectMonkey', { spacemonkeys });
+});
+
+// Endpoint to create a new order in the database
+router.post('/api/orders/create', async (req, res) => {
+  const { burgerId, spacemonkeyId } = req.body;
+  // Get the user id from the session
+  const { id: userId } = req.session.user; 
+  await Order.create({ user_id: userId, burger_id: burgerId, spacemonkey_id: spacemonkeyId });
+  res.sendStatus(200);
+});
+
+// Endpoint to show the order confirmation page
+router.get('/orders/confirmation', (req, res) => {
+  res.render('orderConfirmation');
+});
+
+// Endpoint to show the tracking page and then redirect to the delivery confirmation page
+router.get('/orders/tracking', (req, res) => {
+  res.render('orderTracking');
 });
 
 router.get('/restaurants/:restaurantId', async (req, res) => {
