@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { restart } = require('nodemon');
-const { Developer, Spacemonkey, Restaurant, Burger, Review } = require('../models');
+const { Developer, Spacemonkey, Restaurant, Burger } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -55,21 +55,22 @@ router.get('/browse', async (req, res) => {
   
 });
 
-router.get('/restaurants/:restaurantId', async (req, res) => {
+router.get('/restaurant/:restaurantId', async (req, res) => {
   try {
+    const restaurantId = req.params.restaurantId;
 
-    const burgerData = await Burger.findAll({
-      where: {
-        restaurantId: req.params.restaurantId
-      }
-    });
-    const burgers = burgerData.map(burger => burger.get({
-      plain: true
-    }));
-    console.log('\n\n\n\n\n');
-    console.log(burgers);
-    res.render('restaurant', {burgers});
+    // Find restaurant and associated burgers
+    const restaurant = await Restaurant.findOne({
+      where : { id: restaurantId },
+      include: [ { model: Burger } ]
+    })
 
+    if (!restaurant) {
+      res.status(404).send('Restaurant not found');
+    } 
+
+    // Render restaurant page
+    res.render('restaurant', { restaurant: restaurant.toJSON() });
   } catch (err) {
     res.status(500).json(err.message);
   }
