@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { restart } = require('nodemon');
-const { Developer, Spacemonkey, Restaurant, Burger } = require('../models');
+const { Developer, Spacemonkey, Restaurant, Burger, Review } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -73,6 +73,12 @@ router.get('/order/:restaurantId', async (req, res) => {
 
 router.get('/about', (req, res) => {
   res.render('about');
+});
+
+router.get('/reviews', async (req, res) => {
+  const dbres = await Review.findAll();
+  const reviews = dbres.map((review) => review.get({ plain: true }));
+  res.render('review', { reviews });
 });
 
 module.exports = router;

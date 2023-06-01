@@ -13,5 +13,4 @@ Burger.belongsTo(Restaurant, {
   foreignKey: 'restaurantId'
 });
 
-
 module.exports = { User, Developer, Spacemonkey, Restaurant, Burger, Review };
