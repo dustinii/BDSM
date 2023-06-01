@@ -25,6 +25,13 @@ Order.init(
         key: 'id',
       },
     },
+    spacemonkey_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'spacemonkey',
+        key: 'id',
+      },
+    },
     completed: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
