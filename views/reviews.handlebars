@@ -1,2 +1,32 @@
 
+<<<<<<< Updated upstream
  
+=======
+<h1 class="title has-text-centered">Reviews</h1>
+<section class="section">
+  <div class="container">
+    <div class="columns is-mobile">
+      {{#each reviews as |review|}}
+      <div class="column is-one-fifth">
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">{{review.userId}}</p>
+              </div>
+            </div>
+            <div class="content">
+              <p>{{review.bio}}</p>
+              <a href="{{review.reviewDetails}}" target="_blank">
+                <i class="fab fa-github"></i> Reviewer Profile
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+  </div>
+</section>
+>>>>>>> Stashed changes
