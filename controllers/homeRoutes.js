@@ -55,7 +55,7 @@ router.get('/browse', async (req, res) => {
   
 });
 
-router.get('/restaurant/:restaurantId', async (req, res) => {
+router.get('/restaurants/:restaurantId', async (req, res) => {
   try {
     const restaurantId = req.params.restaurantId;
 
@@ -63,11 +63,13 @@ router.get('/restaurant/:restaurantId', async (req, res) => {
     const restaurant = await Restaurant.findOne({
       where : { id: restaurantId },
       include: [ { model: Burger } ]
-    })
+    });
 
     if (!restaurant) {
       res.status(404).send('Restaurant not found');
-    } 
+    }
+
+    console.log(restaurant);
 
     // Render restaurant page
     res.render('restaurant', { restaurant: restaurant.toJSON() });

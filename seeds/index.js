@@ -3,7 +3,7 @@ const seedDevelopers = require('./developerData');
 const seedRestaurants = require('./restaurantData');
 const seedBurgers = require('./burgerData');
 const seedSpacemonkeys = require('./spacemonkeyData');
-const seedReviews = require('./reviewData');
+// const seedReviews = require('./reviewData');
 
 
 const seedAll = async () => {
@@ -24,8 +24,8 @@ const seedAll = async () => {
   await seedBurgers();
   console.log('\n----- BURGERS SEEDED -----\n');
 
-  await seedReviews();
-  console.log('\n----- REVIEWS SEEDED -----\n');
+  // await seedReviews();
+  // console.log('\n----- REVIEWS SEEDED -----\n');
 
   process.exit(0);
 };
