@@ -3,15 +3,13 @@ const { Order } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
-    const orderData = await order.create(req.body);
+    const orderData = await Order.findall();
+    const order = orderData.map((order)=> 
+      order.get({plain : true}));
 
-    req.session.save(() => {
-      req.session.Order_id = OrderData.id;
-
-      res.status(200).json(OrderData);
-    });
+    res.render('order', {order});
   } catch (err) {
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
 
