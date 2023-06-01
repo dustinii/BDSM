@@ -9,9 +9,9 @@ router.get('/:id', async (req, res) => {
 
     res.render('order', {order});
 
-    const orderData = await Order.findByPk(req.params.id, {
-      include: [{ model: Burger }, { model: Restaurant }],
-    });
+    // const orderData = await Order.findByPk(req.params.id, {
+    //   include: [{ model: Burger }, { model: Restaurant }],
+    // });
 
     if (!orderData) {
       res.status(404).json({ message: 'No order found with that id!' });
