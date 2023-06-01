@@ -1,4 +1,29 @@
+<h1 class="title has-text-centered">Our Amazing Developers</h1>
+<section class="section">
+  <div class="container">
+    <div class="columns is-mobile">
+      {{#each reviews as |review|}}
+      <div class="column is-one-fifth">
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">{{review.userId}}</p>
+              </div>
+            </div>
+            <div class="content">
+              <p>{{review.reviewDetails}}</p>
+              <a href="{{review.burgerId}}" target="_blank">
+                <i class="fab fa-github"></i> Burger in question
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
  
 =======
@@ -27,6 +52,10 @@
       {{/each}}
     </div>
 
+  </div>
+</section>
+>>>>>>> Stashed changes
+=======
   </div>
 </section>
 >>>>>>> Stashed changes
