@@ -55,9 +55,21 @@ router.get('/browse', async (req, res) => {
   
 });
 
-router.get('/order/:restaurantId', async (req, res) => {
+router.get('/restaurants/:restaurantId', async (req, res) => {
   try {
-    con;
+
+    const burgerData = await Burger.findAll({
+      where: {
+        restaurantId: req.params.restaurantId
+      }
+    });
+    const burgers = burgerData.map(burger => burger.get({
+      plain: true
+    }));
+    console.log('\n\n\n\n\n');
+    console.log(burgers);
+    res.render('restaurant', {burgers});
+
   } catch (err) {
     res.status(500).json(err.message);
   }

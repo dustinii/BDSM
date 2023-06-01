@@ -1,9 +1,8 @@
-<h1>order Page</h1>
+<h1>restaurant Menu Page</h1>
 
-{{!-- <div class="columns">
-  {{#each orders as |order|}}
+<div class="columns">
+  {{#each burgers as |burger|}}
     <div class="column">
-      <a href="/order/{{restaurant.id}}">
         <div class="card">
             <div class="card-image">
                 <figure class="image is-4by3">
@@ -13,16 +12,20 @@
             <div class="card-content">
                 <div class="media">
                     <div class="media-content">
-                        <p class="title is-4">{{restaurant.name}}</p>
+                        <p class="title is-4">{{burger.name}}</p>
                     </div>
                 </div>
 
                 <div class="content">
-                  {{restaurant.description}}
+                  {{burger.burgerDetails}}
                 </div>
             </div>
         </div>
-      </a>
+
+        <button data-id="{{burger.id}}" class="button is-primary">Order</button>
+
     </div>
     {{/each}}
-    </div> --}}
+    </div>
+
+    <script src="/js/order.js"></script>
