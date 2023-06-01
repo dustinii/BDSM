@@ -2,21 +2,55 @@ const { Review } = require('../models');
 
 const reviewData = [
   {
-    name:'',
-    burgerId: 1
+    userId:,
+    burgerId:,
+    reviewDetails: '',
   },
   {
-    review:'',
+    userId:,
+    burgerId:,
+    reviewDetails: '',
   },
   {
-    review:'',
+    userId:,
+    burgerId:,
+    reviewDetails: '',
   },
   {
-    review:'',
+    userId:,
+    burgerId:,
+    reviewDetails: '',
   },
   {
-    review:'',
+    userId:,
+    burgerId:,
+    reviewDetails: '',
   },
+  {
+    userId:,
+    burgerId:,
+    reviewDetails: '',
+  },
+  {
+    userId:,
+    burgerId:,
+    reviewDetails: '',
+  },
+  {
+    userId:,
+    burgerId:,
+    reviewDetails: '',
+  },
+  {
+    userId:,
+    burgerId:,
+    reviewDetails: '',
+  },
+  {
+    userId:,
+    burgerId:,
+    reviewDetails: '',
+  }
 ];
 
 const seedReviews = () => Review.bulkCreate(reviewData);
