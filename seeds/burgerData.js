@@ -28,7 +28,7 @@ const burgerData = [
   {
     name: 'Escape Velocity Burger',
     image: '/images/burgers/EscapeVelocityBurger.jpg',
-    burgerDetails: 'What kind of burger is so delicious that you move so quickly in order to get to it? Savory spices and an touch of spice that\'s enough to fuel your escape all the way to the Event Horizon Diner\'s signature burger!',
+    burgerDetails: 'Savory spices and an touch of spice that\'s enough to fuel your escape all the way to the Event Horizon Diner\'s signature burger!',
     restaurantId: 2
   },
   {
