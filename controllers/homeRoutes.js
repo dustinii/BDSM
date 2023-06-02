@@ -118,7 +118,7 @@ router.get('/about', (req, res) => {
   res.render('about');
 });
 
-router.get('/review/:id', async (req, res) => {
+router.get('/review', async (req, res) => {
   const dbres = await Review.findAll();
   const reviews = dbres.map((review) => review.get({ plain: true }));
   res.render('review', { reviews });

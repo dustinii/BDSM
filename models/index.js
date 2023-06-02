@@ -7,28 +7,28 @@ const Review = require('./review');
 const Order = require('./Order');
 
 Review.belongsTo(User, {
-  foreignKey: 'userId',
+  foreignKey: 'user_id',
 });
 
 User.hasMany(Review, {
-  foreignKey: 'userId',
+  foreignKey: 'user_id',
 });
 
 Review.belongsTo(Burger, {
-  foreignKey: 'burgerId',
+  foreignKey: 'burger_id',
 });
 
 Burger.hasMany(Review, {
-  foreignKey: 'burgerId',
+  foreignKey: 'burger_id',
 });
 
-Review.belongsTo(Restaurant, {
-  foreignKey: 'restaurantId',
-});
+// Review.belongsTo(Restaurant, {
+//   foreignKey: 'restaurantId',
+// });
 
-Restaurant.hasMany(Review, {
-  foreignKey: 'restaurantId',
-});
+// Restaurant.hasMany(Review, {
+//   foreignKey: 'restaurantId',
+// });
 
 Restaurant.hasMany(Burger, {
   foreignKey: 'restaurantId'
@@ -39,19 +39,19 @@ Burger.belongsTo(Restaurant, {
 });
 
 Order.belongsTo(User, {
-  foreignKey: 'userId',
+  foreignKey: 'user_id',
 });
 
 User.hasMany(Order, {
-  foreignKey: 'userId',
+  foreignKey: 'user_id',
 });
 
 Order.belongsTo(Burger, {
-  foreignKey: 'burgerId',
+  foreignKey: 'burger_id',
 });
 
 Burger.hasMany(Order, {
-  foreignKey: 'burgerId',
+  foreignKey: 'burger_id',
 });
 
 module.exports = { User, Developer, Spacemonkey, Restaurant, Burger, Review, Order };
