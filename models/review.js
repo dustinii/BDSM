@@ -15,14 +15,14 @@ Review.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'burger'
+        modelName: 'burger'
       }
     },
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'user'
+        modelName: 'user'
       }
     },
     reviewDetails: {
