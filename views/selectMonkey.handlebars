@@ -1,4 +1,4 @@
-<h1 class="title">Select your SpaceMonkey</h1>
+<h1 class="title has-text-centered toptitle">Select your SpaceMonkey</h1>
 
 <div class="columns">
     {{#each spacemonkeys as |spacemonkey|}}
@@ -20,7 +20,12 @@
                     {{spacemonkey.bio}}
                 </div>
             </div>
-            <button data-id="{{spacemonkey.id}}" class="button is-primary select-monkey-button"><i class="fa-regular fa-monkey"></i>Select</button>
+            <div class="level">
+                <div class="level-item">
+                    <button data-id="{{spacemonkey.id}}" class="button is-primary is-light select-monkey-button"><i
+                            class="fa-regular fa-monkey"></i>Select</button>
+                </div>
+            </div>
         </div>
     </div>
     {{/each}}
