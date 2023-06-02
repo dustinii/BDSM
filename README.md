@@ -41,13 +41,13 @@ Welcome to "Burgers Delivered by Space Monkeys" (BDSM)! This is a whimsical and 
 
 ## [Technologies used](#technologiesused)
 
-- Node.js
-- Express.js
-- Handlebars.js
-- MySQL
-- Sequelize ORM
-- Express-session and Cookies for authentication
-- Heroku for deployment
+- [Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [Express.js](https://www.npmjs.com/package/express)
+- [Handlebars.js](https://www.npmjs.com/package/handlebars)
+- [MySQL](https://www.npmjs.com/package/mysql2)
+- [Sequelize ORM](https://www.npmjs.com/package/sequelize)
+- [Express-session](https://www.npmjs.com/package/express-session) and Cookies for authentication
+- [Heroku](https://heroku.com/) for deployment
 
 ## [Getting started](#gettingstarted)
 
