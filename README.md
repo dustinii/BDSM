@@ -1,10 +1,36 @@
-# BDSM
-Burgers Delivered by Space Monkeys
+# B `urgers` 
+# D `elivered by`
+# S `pace` 
+# M `onkeys`
+
 # Burgers Delivered by Space Monkeys (BDSM)
 
 Welcome to "Burgers Delivered by Space Monkeys" (BDSM)! This is a whimsical and interactive web application that allows users to order delicious burgers delivered by our adorable space monkey couriers.
 
-## Features
+## SCREENSHOT
+![Screenshot](screenshot.jpg)
+
+## TABLE OF CONTENTS
+
+* [Features](#features)
+
+* [Technologies used](#technologiesused)
+
+* [Getting started](#gettingstarted)
+
+* [Folder structure](#folder-structure)
+
+* [Contributing](#contributing)
+
+* [License](#license)
+
+* [Development team](#dev-team)
+
+* [Repository location](#repo-location)
+
+* [Questions](#questions)
+
+## [Features](#features)
 
 - Browse through a variety of space-themed burger restaurants and their menus.
 - Choose your burger with your favorite toppings and add-ons.
@@ -13,7 +39,7 @@ Welcome to "Burgers Delivered by Space Monkeys" (BDSM)! This is a whimsical and 
 - Enjoy a secure user authentication system for account registration and login.
 - Explore your order history and manage your profile preferences.
 
-## Technologies Used
+## [Technologies used](#technologiesused)
 
 - Node.js
 - Express.js
@@ -23,7 +49,7 @@ Welcome to "Burgers Delivered by Space Monkeys" (BDSM)! This is a whimsical and 
 - Express-session and Cookies for authentication
 - Heroku for deployment
 
-## Getting Started
+## [Getting started](#gettingstarted)
 
 To get started with the project, follow these steps:
 
@@ -34,7 +60,7 @@ To get started with the project, follow these steps:
 5. Run the application: `npm start`
 6. Open your web browser and navigate to `http://localhost:3000` to access the application.
 
-## Folder Structure
+## [Folder structure](#folder-structure)
 
 The project follows the MVC (Model-View-Controller) paradigm for organizing the codebase. Here's an overview of the folder structure:
 
@@ -47,11 +73,24 @@ The project follows the MVC (Model-View-Controller) paradigm for organizing the 
 - `server.js`: The main entry point of the application.
 - `package.json`: Includes project dependencies and scripts.
 
-## Contributing
+## [Contributing](#contributing)
 
 Contributions to the "Burgers Delivered by Space Monkeys" project are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
 
-## License
+## [License](#license)
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
+## [Development team](#dev-team)
+
+- [Dustin Ildefonso](https://github.com/dustinii/)
+- [Samuel Carag](https://github.com/sammyrey6)
+- [Brian Autieri](https://github.com/Brian-Autieri)
+- [Joceliyn Valdez](https://github.com/jovaldez98)
+- [Paul Koehler](https://github.com/pk50sshowa)
+
+## [Repository location](#repo-location)
+https://github.com/dustinii/BDSM
+
+## [Questions](#questions)
+Please contact one of the developers if you have questions about this project!
