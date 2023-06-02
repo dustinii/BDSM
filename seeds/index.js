@@ -24,11 +24,11 @@ const seedAll = async () => {
   await seedBurgers();
   console.log('\n----- BURGERS SEEDED -----\n');
 
-  await seedReviews();
-  console.log('\n----- REVIEWS SEEDED -----\n');
-
   await seedUsers();
   console.log('\n----- USERS SEEDED -----\n');
+
+  await seedReviews();
+  console.log('\n----- REVIEWS SEEDED -----\n');
 
   process.exit(0);
 };

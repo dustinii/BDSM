@@ -11,14 +11,14 @@ Review.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    burgerId: {
+    burger_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         modelName: 'burger'
       }
     },
-    userId: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
