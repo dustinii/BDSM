@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { spaceMonkey } = require('../../models');
+const { Spacemonkey } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
@@ -15,9 +15,9 @@ router.post('/', async (req, res) => {
 
 router.post('/spacemonkeys', async (req, res) => {
   try {
-    const spaceMonkeyData = await review.findOne({ where: { id: req.body.spaceMonkey } });
+    const spacemonkeyData = await Spacemonkey.findOne({ where: { id: req.body.spaceMonkey } });
   
-    if (!spaceMonkeyData) {
+    if (!spacemonkeyData) {
       res
         .status(400)
         .json({ message: 'No space monkey found.' });

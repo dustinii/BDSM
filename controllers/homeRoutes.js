@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { restart } = require('nodemon');
-const { Developer, Spacemonkey, Restaurant, Burger, Order } = require('../models');
+const { Developer, Spacemonkey, Restaurant, Burger, Order, Review } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
