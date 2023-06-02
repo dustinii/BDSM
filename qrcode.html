@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator Base</title>
+</head>
+
+<!-- Use this as a template for inserting into handlebars for later QR code generation -->
+<body>
+    <div id="qrCode"></div>
+    <!-- <script src="bundle.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <!-- The link in the following script will be a dynamic one, meant to include the items in the order once it is finished. -->
+    <script>
+        new QRCode(document.getElementById("qrCode"), "http://www.pjkoehler.com");
+    </script>
+</body>
+
+</html>
