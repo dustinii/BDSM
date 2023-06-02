@@ -4,8 +4,14 @@ const { Developer, Spacemonkey, Restaurant, Burger, Order } = require('../models
 // const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
+  if(req.session.logged_in){
+    console.log('logged in');
+    console.log(req.session.user_id);
+  } else {
+    console.log('not logged in');
+  }
   try {
-    res.render('homepage');
+    res.render('homepage', {logged_in: req.session.logged_in});
   } catch (err) {
     res.status(500).json(err);
   }
@@ -25,7 +31,6 @@ router.get('/signup', (req, res) => {
     res.redirect('/');
     return;
   }
-
   res.render('signup');
 });
 
@@ -66,9 +71,14 @@ router.get('/selectMonkey', async (req, res) => {
 router.post('/api/orders/create', async (req, res) => {
   const { burgerId, spacemonkeyId } = req.body;
   // Get the user id from the session
-  const { id: userId } = req.session.user; 
-  await Order.create({ user_id: userId, burger_id: burgerId, spacemonkey_id: spacemonkeyId });
-  res.sendStatus(200);
+  const user_id = req.session.user_id; 
+  try{
+    await Order.create({ user_id: user_id, burger_id: burgerId, spacemonkey_id: spacemonkeyId });
+    res.sendStatus(200);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err.message);
+  }
 });
 
 // Endpoint to show the order confirmation page

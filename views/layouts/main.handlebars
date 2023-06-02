@@ -36,12 +36,16 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
+            {{#if logged_in}}
+            <a class="button" href="/logout">Log Out</a>
+            {{else}}
             <a class="button is-primary" href="/login">
               <strong>Log in</strong>
             </a>
             <a class="button is-light" href="/signup">
               Sign up
             </a>
+            {{/if}}
           </div>
         </div>
       </div>

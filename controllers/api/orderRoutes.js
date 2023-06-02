@@ -25,10 +25,11 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+  console.log(req.body);
   try {
     const newOrder = await Order.create({
       ...req.body,
-      userId: req.session.userId,
+      user_id: req.session.user_id,
     });
 
     res.status(200).json(newOrder);
