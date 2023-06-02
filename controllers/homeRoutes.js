@@ -124,4 +124,8 @@ router.get('/review', async (req, res) => {
   res.render('review', { reviews });
 });
 
+router.get('/orders/deliveryConfirmation', async (req, res) => {
+  res.render('deliveryConfirmation');
+});
+
 module.exports = router;
