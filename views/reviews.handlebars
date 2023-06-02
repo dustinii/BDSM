@@ -3,6 +3,9 @@
   <div class="container">
     <div class="columns is-mobile">
       {{#each reviews as |review|}}
+      <h2>
+        <i class="fab fa-github"></i> Burgers in question
+      </h2>
       <div class="column is-one-fifth">
         <div class="card">
           <div class="card-content">
@@ -13,17 +16,14 @@
             </div>
             <div class="content">
               <p>{{review.reviewDetails}}</p>
-              <a href="{{review.burgerId}}" target="_blank">
-                <i class="fab fa-github"></i> Burger in question
-              </a>
             </div>
           </div>
         </div>
       </div>
       {{/each}}
-    </div> --}}
+    </div>
 
-<h1 class="title has-text-centered">Are these burgers out of this world!</h1>
+<h1 class="title has-text-centered">Reviews</h1>
 <section class="section">
   <div class="container">
     <div class="columns is-mobile">
@@ -37,15 +37,13 @@
               </div>
             </div>
             <div class="content">
-              <p>{{review.reviewDetails}}</p>
-                <i class="fab fa-github"></i> Burger Anamolies
+              <p>{{review.bio}}</p>
+              <a href="{{review.reviewDetails}}" target="_blank">
+                <i class="fab fa-github"></i> Reviewer Profile
               </a>
             </div>
           </div>
         </div>
       </div>
-      {{/each}}
-    </div>
-
-  </div>
+    </aside>
 </section>
