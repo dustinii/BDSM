@@ -42,6 +42,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('tiny', { stream: accessLogStream }));
 
+
+// Make 'logged_in' available in all Handlebars.js templates
+app.use((req, res, next) => {
+  res.locals.logged_in = req.session.logged_in;
+  next();
+});
+
+
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
