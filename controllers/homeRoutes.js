@@ -22,7 +22,6 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-
   res.render('login');
 });
 
@@ -52,7 +51,6 @@ router.get('/browse', async (req, res) => {
     const restaurants = restaurantData.map(restaurant => restaurant.get({
       plain:true
     }));
-    console.log(restaurants);
     res.render('browse', {restaurants});
   } catch (err) {
     res.status(500).json(err.message);
@@ -69,12 +67,12 @@ router.get('/selectMonkey', async (req, res) => {
 
 // Endpoint to create a new order in the database
 router.post('/api/orders/create', async (req, res) => {
-  const { burgerId, spacemonkeyId } = req.body;
+  const { burger_id, spacemonkey_id } = req.body;
   // Get the user id from the session
   const user_id = req.session.user_id; 
   try{
-    await Order.create({ user_id: user_id, burger_id: burgerId, spacemonkey_id: spacemonkeyId });
-    res.sendStatus(200);
+    const order = await Order.create({ user_id: user_id, burger_id: burger_id, spacemonkey_id: spacemonkey_id });
+    res.status(200).json(order);
   } catch (err) {
     console.log(err);
     res.status(500).json(err.message);
@@ -82,8 +80,26 @@ router.post('/api/orders/create', async (req, res) => {
 });
 
 // Endpoint to show the order confirmation page
-router.get('/orders/confirmation', (req, res) => {
-  res.render('orderConfirmation');
+router.get('/orders/confirmation/:id', async (req, res) => {
+  // get new order information by id
+  const orderData = await Order.findOne({
+    where: { id: req.params.id },
+    include: [
+      {
+        model: Burger, 
+        include: [ Restaurant ]
+      },
+      {
+        model: Spacemonkey
+      },
+    ],
+  });
+  
+  // console.log(orderData);
+  const order = orderData.get({plain: true});
+  console.log(order);
+  // render orderConfirmation with the new order info.
+  res.render('orderConfirmation', {order});
 });
 
 // Endpoint to show the tracking page and then redirect to the delivery confirmation page

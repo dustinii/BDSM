@@ -54,4 +54,12 @@ Burger.hasMany(Order, {
   foreignKey: 'burger_id',
 });
 
+Order.belongsTo(Spacemonkey, {
+  foreignKey: 'spacemonkey_id',
+});
+
+Spacemonkey.hasMany(Order, {
+  foreignKey: 'spacemonkey_id',
+});
+
 module.exports = { User, Developer, Spacemonkey, Restaurant, Burger, Review, Order };
