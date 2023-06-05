@@ -45,6 +45,12 @@ router.get('/developers', async (req, res) => {
   res.render('developers', { developers });
 });
 
+router.get('/review', async (req, res) => {
+  const dbres = await Review.findAll();
+  const reviews = dbres.map((review) => review.get({ plain: true }));
+  res.render('reviews', { reviews });
+});
+
 router.get('/browse', async (req, res) => {
   try {
     const restaurantData = await Restaurant.findAll();
@@ -57,6 +63,7 @@ router.get('/browse', async (req, res) => {
   }
   
 });
+
 
 // Endpoint to render the selectMonkey page with all SpaceMonkeys
 router.get('/selectMonkey', async (req, res) => {
@@ -137,7 +144,7 @@ router.get('/about', (req, res) => {
 router.get('/review', async (req, res) => {
   const dbres = await Review.findAll();
   const reviews = dbres.map((review) => review.get({ plain: true }));
-  res.render('review', { reviews });
+  res.render('reviews', { reviews });
 });
 
 router.get('/orders/deliveryConfirmation', async (req, res) => {
