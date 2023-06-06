@@ -1,17 +1,14 @@
-<h1 class="title has-text-centered">Reviews</h1>
+<h1 class="title has-text-centered">Check out the Amazing Reviews</h1>
 <section class="section">
   <div class="container">
     <div class="columns is-mobile">
       {{#each reviews as |review|}}
-      <h2>
-        <i class="fab fa-github"></i> Burgers in question
-      </h2>
       <div class="column is-one-fifth">
         <div class="card">
           <div class="card-content">
             <div class="media">
               <div class="media-content">
-                <p class="title is-4">{{review.userId}}</p>
+                <p class="title is-4">{{review.burger.name}}</p>
               </div>
             </div>
             <div class="content">
@@ -26,15 +23,24 @@
       <h2>Give us your feedback</h2>
       <div class="field">
         <h3>Which buger?</h3>
-        <label class="label" for="burger">burger</label>
+        <label class="label" for="burger">Burger</label>
         <div class="control">
-          <input class="input" type="review" id="review" name="review" required>
-        <label class="label" for="review">review</label>
+          <select id="burger_id">
+            {{#each burgers as |burger|}}
+            <option value="{{burger.id}}">{{burger.name}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <label class="label" for="review">Review</label>
         <div class="control">
-          <input class="input" type="review" id="review" name="review" required>
-      </div>
-      <div class="control">
-        <button class="button is-link">Submit</button>
-      </div>
+          <input class="input" type="review" id="reviewDetails" name="review" required>
+        </div>
+        <div class="control">
+          <button class="button is-link">Submit</button>
+        </div>
     </aside>
 </section>
+
+<script src="/js/addReview.js">
+
+</script>

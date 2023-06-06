@@ -45,11 +45,6 @@ router.get('/developers', async (req, res) => {
   res.render('developers', { developers });
 });
 
-router.get('/review', async (req, res) => {
-  const dbres = await Review.findAll();
-  const reviews = dbres.map((review) => review.get({ plain: true }));
-  res.render('reviews', { reviews });
-});
 
 router.get('/browse', async (req, res) => {
   try {
@@ -137,14 +132,45 @@ router.get('/restaurants/:restaurantId', async (req, res) => {
   }
 });
 
+// Endpoint to show the order confirmation page with the latest order and the last 10 orders
+router.get('/orderComplete', async (req, res) => {
+  const user_id = req.session.user_id;
+  const latestOrder = await Order.findOne({
+    where: { user_id: user_id },
+    order: [['createdAt', 'DESC']],
+    include: ['burger', 'spacemonkey']
+  });
+
+  const latestOrderData = latestOrder.get({ plain: true });
+  console.log(latestOrderData);
+
+  const pastOrders = await Order.findAll({
+    where: { user_id: user_id },
+    order: [['createdAt', 'DESC']],
+    include: ['burger', 'spacemonkey'],
+    limit: 10
+  });
+
+  const pastOrdersData = pastOrders.map((order) => order.get({ plain: true }));
+  console.log(pastOrdersData);
+
+  res.render('orderComplete', { latestOrderData, pastOrdersData });
+});
+
+
 router.get('/about', (req, res) => {
   res.render('about');
 });
 
 router.get('/review', async (req, res) => {
-  const dbres = await Review.findAll();
-  const reviews = dbres.map((review) => review.get({ plain: true }));
-  res.render('reviews', { reviews });
+  const reviewdbres = await Review.findAll({ include: Burger});
+  const burgerdbres = await Burger.findAll();
+  const reviews = reviewdbres.map((review) => review.get({ plain: true }));
+  const burgers = burgerdbres.map((burger) => burger.get({ plain: true }));
+
+  console.log(reviews);
+  res.render('reviews', { reviews,burgers });
+
 });
 
 router.get('/orders/deliveryConfirmation', async (req, res) => {

@@ -11,7 +11,7 @@ const developerData = [
     name: 'Paul K',
     image: '/images/developers/profpaul.jpg',
     github_link: 'https://github.com/pk50sshowa',
-    bio: 'A dedicated developer specializing in backend technologies, with a background in media and communications to help spread the message of the space monkeys across our solar system!',
+    bio: 'A dedicated developer specializing in backend technologies, with a background in communications to help spread the message of the space monkeys!',
   },
   {
     name: 'Jocelyn V',

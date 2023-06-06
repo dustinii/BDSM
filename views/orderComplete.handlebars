@@ -1,0 +1,17 @@
+<h1 class="title has-text-centered">Order Complete!</h1>
+<h2 class="subtitle has-text-centered">Your latest order:</h2>
+<div class="content is-centered">
+  {{#with latestOrderData}}
+  <p>Order ID: {{id}}</p>
+  <p>Burger: {{burger.name}}</p>
+  <p>Delivery Spacemonkey: {{spacemonkey.name}}</p>
+  {{/with}}
+</div>
+<h2 class="subtitle has-text-centered">Your past orders:</h2>
+<div class="content is-centered">
+  {{#each pastOrdersData}}
+  <p>Order ID: {{this.id}}</p>
+  <p>Burger: {{this.burger.name}}</p>
+  <p>Delivery Spacemonkey: {{this.spacemonkey.name}}</p>
+  {{/each}}
+</div>
