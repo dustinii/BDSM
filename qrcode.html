@@ -8,15 +8,11 @@
     <title>QR Code Generator Base</title>
 </head>
 
-<!-- Use this as a template for inserting into handlebars for later QR code generation -->
 <body>
-    <div id="qrCode"></div>
-    <!-- <script src="bundle.js"></script> -->
+    <div id="qrcode-container"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <!-- The link in the following script will be a dynamic one, meant to include the items in the order once it is finished. -->
     <script>
-        new QRCode(document.getElementById("qrCode"), "http://www.pjkoehler.com");
+        new QRCode(document.getElementById("qrcode-container"), window.location.href);
     </script>
 </body>
-
 </html>
