@@ -19,7 +19,7 @@ router.post('/browse', async (req, res) => {
   try {
     const restaurantsData = await Restaurants.findOne({ where: { id: req.body.restaurants } });
   
-    if (!restuarantsData) {
+    if (!restaurantsData) {
       res
         .status(400)
         .json({ message: 'No restaurant found.' });

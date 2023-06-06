@@ -1,17 +1,40 @@
-<h1 class="title has-text-centered">Order Complete!</h1>
-<h2 class="subtitle has-text-centered">Your latest order:</h2>
-<div class="content is-centered">
-  {{#with latestOrderData}}
-  <p>Order ID: {{id}}</p>
-  <p>Burger: {{burger.name}}</p>
-  <p>Delivery Spacemonkey: {{spacemonkey.name}}</p>
-  {{/with}}
-</div>
-<h2 class="subtitle has-text-centered">Your past orders:</h2>
-<div class="content is-centered">
-  {{#each pastOrdersData}}
-  <p>Order ID: {{this.id}}</p>
-  <p>Burger: {{this.burger.name}}</p>
-  <p>Delivery Spacemonkey: {{this.spacemonkey.name}}</p>
-  {{/each}}
-</div>
+<section class="section">
+  <div class="container">
+    <h1 class="title has-text-centered toptitle">Order Complete!</h1>
+
+    <div class="tile is-ancestor">
+      <div class="tile is-vertical">
+        
+        <!-- Latest Order -->
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-primary">
+            <p class="title has-text-centered">Your latest order</p>
+            {{#with latestOrderData}}
+            <div class="content has-text-centered">
+              <p><i class="fa-solid fa-list"></i><strong>Order ID:</strong> #42069{{id}}</p>
+              <p><i class="fa-solid fa-burger"></i><strong>Burger:</strong> {{burger.name}}</p>
+              <p><i class="fa-solid fa-user-astronaut"></i><strong>Spacemonkey:</strong> {{spacemonkey.name}}</p>
+            </div>
+            {{/with}}
+          </article>
+        </div>
+
+        <!-- Past Orders -->
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-warning">
+            <p class="title has-text-centered">Your past orders</p>
+            {{#each pastOrdersData}}
+            <hr>
+            <div class="content has-text-centered">
+              <p><i class="fa-solid fa-list"></i><strong>Order ID:</strong> #42069{{this.id}}</p>
+              <p><i class="fa-solid fa-burger"></i><strong>Burger:</strong> {{this.burger.name}}</p>
+              <p><i class="fa-solid fa-user-astronaut"></i><strong>Spacemonkey:</strong> {{this.spacemonkey.name}}</p>
+            </div>
+            {{/each}}
+          </article>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>

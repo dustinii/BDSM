@@ -47,7 +47,7 @@ body {
 }
 
 .burger-fixed-height {
-	height: 570px;
+	height: 600px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -55,7 +55,7 @@ body {
 
 .card-image:hover {
 	border: 4px solid #213a5c;
-	transform: scale(1.5);
+	transform: scale(1.3);
 	/* Increase the scale on hover */
 	transition: transform 0.3s ease;
 	/* Add a smooth transition effect */
