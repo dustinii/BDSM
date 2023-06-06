@@ -4,7 +4,7 @@ const spacemonkeyData = [
   {
     name: 'Mikko',
     image: '/images/space-monkeys/mikko.spmky.jpg',
-    bio:'Mikko is one of the hardest-working workers that you could ever ask for. Mikko has a lot of energy and fastest at delivering your delicious burgers!',
+    bio:'Mikko is one of the hardest-working workers that you could ever ask for. Mikko has lots of energy and is the fastest at delivering your delicious burgers!',
   },
   {
     name: 'Edwin',
@@ -24,7 +24,7 @@ const spacemonkeyData = [
   {
     name: 'Minlee',
     image: '/images/space-monkeys/minlee.spmky.png',
-    bio:'Minlee is one if our shyiest Space-Monkeys, please be kind to her! She is shy but is one of the kindest, hard-working, and will go an extra mile to make sure you get the best costumer service.',
+    bio:'Minlee is one if our shyiest Space-Monkeys, please be kind to her! She is shy but is one of the kindest workers. She will definitely go an extra mile to make sure you get the best costumer service.',
   },
 ];
 
