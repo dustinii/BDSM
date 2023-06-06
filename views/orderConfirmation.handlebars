@@ -1,26 +1,45 @@
 <section class="section">
     <div class="container">
-        <h1 class="title">Order Confirmation</h1>
-        <div class="content">
-            <h2 class="subtitle">Dear Customer,</h2>
-            <p>Thank you for placing your order with us. Here are the details of your order:</p>
-            <ul>
-                <li><strong>Burger:</strong> {{order.burger.name}}</li>
-                <li><img src="{{order.burger.image}}" alt="{{order.burger.name}} Image" class="image is-64x64">
-                <li><strong>Delivery Personnel:</strong> {{order.spacemonkey.name}}</li>
-                <li><img src="{{order.spacemonkey.image}}" alt="{{order.spacemonkey.name}} Image"
-                        class="image is-64x64">
-                <li><strong>Order ID:</strong> #42069{{order.id}}</li>
-                <li><strong>Order Placed On:</strong> {{format_date order.createdAt}}</li>
-            </ul>
-            <p>Your order is currently being prepared and will be on its way soon. You can track the progress of your
-                order by clicking on the "Track My Order" button below.</p>
-            <button class="button is-primary" onclick="window.location.href='/orders/tracking'">Track My Order</button>
-        </div>
-        <p>Here is your order's QR code:</p>
-        <div id="qrcode-container"></div>
-    </div>
-</section>
+        <div class="columns is-centered">
+            <div class="column is-10">
+                <h1 class="title has-text-centered toptitle">Order Confirmation</h1>
+                <div class="columns">
+                    <div class="column is-9">
+                        <div class="box">
+                            <h2 class="subtitle">Dear Customer,</h2>
+                            <p>Thank you for placing your order with us. Here are the details of your order:</p>
+                            <hr>
+                            <ul>
+                                <li><strong><i class="fa-solid fa-burger"></i> Burger:</strong> {{order.burger.name}}</li>
+                                <li><strong><i class="fa-solid fa-user-astronaut"></i> SpaceMonkey:</strong> {{order.spacemonkey.name}}</li>
+                                <li><strong><i class="fa-solid fa-list"></i> Order ID:</strong> #42069{{order.id}}</li>
+                                <li><strong><i class="fa-solid fa-calendar-days"></i> Order Placed On:</strong> {{format_date order.createdAt}}</li>
+                            </ul>
+                            <hr>
+                            <p>Your order is currently being prepared and will be on its way soon. You can track the progress of your order by clicking on the "Track My Order" button below.</p>
+                            <button class="button is-primary is-fullwidth mt-4" onclick="window.location.href='/orders/tracking'">Track My Order</button>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by4">
+                                    <img src="{{order.burger.image}}" alt="{{order.burger.name}} Image">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="card mt-4">
+                            <div class="card-image">
+                                <figure class="image is-4by4">
+                                    <img src="{{order.spacemonkey.image}}" alt="{{order.spacemonkey.name}} Image">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<script src="/js/redirect.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
     new QRCode(document.getElementById("qrcode-container"), {
@@ -29,4 +48,3 @@
         height: 128
     });
 </script>
-{{!-- <script src="/js/redirect.js"></script> --}}
