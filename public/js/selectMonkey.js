@@ -14,7 +14,8 @@ selectMonkeyBtns.forEach((btn) => {
     });
 
     if (response.ok) {
-      window.location.href = '/orders/confirmation';
+      const respData = await response.json();
+      window.location.href = `/orders/confirmation/${respData.id}`;
     } else {
       console.log('Order creation failed');
     }
