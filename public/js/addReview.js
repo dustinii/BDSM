@@ -1,25 +1,19 @@
-const addReview = as; 
 
+document.querySelector('.control button').addEventListener('click', async (event) => {
+  event.preventDefault();
 
+  const burger_id = document.querySelector('#burger_id').value;
+  const reviewDetails = document.querySelector('#reviewDetails').value;
 
-// const signupFormHandler = async (event) => {
-//     event.preventDefault();
-  
-//     const name = document.querySelector('#name-signup').value.trim();
-//     const email = document.querySelector('#email-signup').value.trim();
-//     const password = document.querySelector('#password-signup').value.trim();
-  
-//     if (name && email && password) {
-//       const response = await fetch('/api/users', {
-//         method: 'POST',
-//         body: JSON.stringify({ name, email, password }),
-//         headers: { 'Content-Type': 'application/json' },
-//       });
-  
-//       if (response.ok) {
-//         document.location.replace('/');
-//       } else {
-//         alert(response.statusText);
-//       }
-//     }
-//   };
+  const response = await fetch('/api/reviews', {
+    method: 'POST',
+    body: JSON.stringify({ burger_id, reviewDetails }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+    document.location.reload();
+  } else {
+    alert('Failed to add review');
+  }
+});

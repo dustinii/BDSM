@@ -38,8 +38,13 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
 <script src="/js/redirect.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+    new QRCode(document.getElementById("qrcode-container"), {
+        text: window.location.href,
+        width: 128,
+        height: 128
+    });
+</script>
