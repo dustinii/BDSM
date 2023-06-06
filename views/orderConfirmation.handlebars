@@ -6,7 +6,9 @@
             <p>Thank you for placing your order with us. Here are the details of your order:</p>
             <ul>
                 <li><strong>Burger:</strong> {{order.burger.name}}</li>
+                <li><img src="{{order.burger.image}}" alt="{{order.burger.name}} Image" class="image is-64x64">
                 <li><strong>Delivery Personnel:</strong> {{order.spacemonkey.name}}</li>
+                <li><img src="{{order.spacemonkey.image}}" alt="{{order.spacemonkey.name}} Image" class="image is-64x64">
                 <li><strong>Order ID:</strong> #42069{{order.id}}</li>
                 <li><strong>Order Placed On:</strong> {{format_date order.createdAt}}</li>
             </ul>
