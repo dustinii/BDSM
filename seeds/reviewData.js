@@ -14,7 +14,7 @@ const reviewData = [
   {
     user_id: 1,
     burger_id: 3,
-    reviewDetails: 'If you love spicy, I strongly recommend this burger. It is absolutely delicious, I will keep ordering this in the future. ',
+    reviewDetails: 'If you love spicy, I strongly recommend this burger. It is absolutely delicious, I will keep ordering this in the future.',
   },
   {
     user_id: 1,
