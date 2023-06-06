@@ -132,6 +132,32 @@ router.get('/restaurants/:restaurantId', async (req, res) => {
   }
 });
 
+// Endpoint to show the order confirmation page with the latest order and the last 10 orders
+router.get('/orderComplete', async (req, res) => {
+  const user_id = req.session.user_id;
+  const latestOrder = await Order.findOne({
+    where: { user_id: user_id },
+    order: [['createdAt', 'DESC']],
+    include: ['burger', 'spacemonkey']
+  });
+
+  const latestOrderData = latestOrder.get({ plain: true });
+  console.log(latestOrderData);
+
+  const pastOrders = await Order.findAll({
+    where: { user_id: user_id },
+    order: [['createdAt', 'DESC']],
+    include: ['burger', 'spacemonkey'],
+    limit: 10
+  });
+
+  const pastOrdersData = pastOrders.map((order) => order.get({ plain: true }));
+  console.log(pastOrdersData);
+
+  res.render('orderComplete', { latestOrderData, pastOrdersData });
+});
+
+
 router.get('/about', (req, res) => {
   res.render('about');
 });
