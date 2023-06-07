@@ -1,24 +1,36 @@
+<!-- Handlebars Page Comments -->
+<!-- This section displays a list of restaurants -->
 <br>
 <section>
+  <!-- Page title -->
   <h1 class="title has-text-centered toptitle">| FOODZ |</h1>
+
+  <!-- Restaurant Cards -->
   <div class="columns is-centered is-multiline">
+    <!-- Iterate over each restaurant in the 'restaurants' array -->
     {{#each restaurants as |restaurant|}}
     <div class="column is-centered is-multiline is-one-quarter">
+      <!-- Link to the individual restaurant's page -->
       <a href="/restaurants/{{restaurant.id}}">
+        <!-- Restaurant card container -->
         <div class="card card-fixed-height">
+          <!-- Restaurant image -->
           <div class="card-image">
             <figure class="image is-4by4">
+              <!-- Display the restaurant's image with alt text -->
               <img src="{{restaurant.image}}" alt="{{restaurant.name}}'s Image">
             </figure>
           </div>
+          <!-- Restaurant card content -->
           <div class="card-content has-text-centered">
             <div class="media">
               <div class="media-content">
+                <!-- Restaurant name -->
                 <p class="title is-4">{{restaurant.name}}</p>
               </div>
             </div>
-
             <div class="content is-centered">
+              <!-- Restaurant description -->
               {{restaurant.description}}
             </div>
           </div>
