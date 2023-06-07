@@ -13,7 +13,7 @@ const developerData = [
     name: 'Paul K',
     image: '/images/developers/profpaul.jpg',
     github_link: 'https://github.com/pk50sshowa',
-    bio: 'A developer working on the back-end with a background in communications.',
+    bio: 'A back-end developer with a background in communications.',
   },
   {
     name: 'Jocelyn V',
