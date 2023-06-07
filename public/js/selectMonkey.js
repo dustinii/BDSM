@@ -4,7 +4,7 @@ selectMonkeyBtns.forEach((btn) => {
   btn.addEventListener('click', async (e) => {
     // Get the spacemonkeyId from the button's data-id attribute
     const spacemonkey_id = e.target.getAttribute('data-id');
-    const burger_id = localStorage.getItem('burgerId');
+    const burger_id = localStorage.getItem('burger_id');
     const response = await fetch('/api/orders/create', {
       method: 'POST',
       headers: {
