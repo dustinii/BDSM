@@ -1,23 +1,35 @@
+<!-- Handlebars Page Comments -->
+<!-- Page title -->
 <h1 class="title has-text-centered toptitle">| Our Amazing Developers |</h1>
+
+<!-- Developer Cards Section -->
 <section class="section">
   <div class="container">
     <div class="columns is-mobile">
+      <!-- Iterate over each developer in the 'developers' array -->
       {{#each developers as |developer|}}
       <div class="column is-centered is-one-fifth">
+        <!-- Developer card container -->
         <div class="card card-fixed-height">
+          <!-- Developer image -->
           <div class="card-image">
             <figure class="image is-4by4">
+              <!-- Display the developer's image with alt text -->
               <img src="{{developer.image}}" alt="{{developer.name}}'s Image">
             </figure>
           </div>
+          <!-- Developer card content -->
           <div class="card-content has-text-centered">
             <div class="media">
               <div class="media-content">
+                <!-- Developer name -->
                 <p class="title is-4">{{developer.name}}</p>
               </div>
             </div>
             <div class="content is-centered">
+              <!-- Developer bio -->
               <p>{{developer.bio}}</p>
+              <!-- Developer GitHub link -->
               <footer class="content is-centered card-footer">
                 <a href="{{developer.github_link}}" target="_blank">
                   <i class="fab fa-github"></i>GitHub</a>

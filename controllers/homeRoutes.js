@@ -3,10 +3,9 @@ const { restart } = require('nodemon');
 const { Developer, Spacemonkey, Restaurant, Burger, Order, Review } = require('../models');
 // const withAuth = require('../utils/auth');
 
+// Endpoint to render the homepage
 router.get('/', async (req, res) => {
   if (req.session.logged_in) {
-    console.log('logged in');
-    console.log(req.session.user_id);
   } else {
     console.log('not logged in');
   }
@@ -17,6 +16,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Endpoint to render the login page
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
@@ -25,6 +25,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// Endpoint to render the signup page
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
@@ -33,20 +34,23 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+// Endpoint to render all spacemonkeys
 router.get('/spacemonkeys', async (req, res) => {
   const dbres = await Spacemonkey.findAll();
   const spacemonkeys = dbres.map((spacemonkey) => spacemonkey.get({ plain: true }));
   res.render('spacemonkey', { spacemonkeys });
 });
 
+// Endpoint to render all developers
 router.get('/developers', async (req, res) => {
   const dbres = await Developer.findAll();
   const developers = dbres.map((developer) => developer.get({ plain: true }));
   res.render('developers', { developers });
 });
 
-
+// Endpoint to render the browse page with all restaurants
 router.get('/browse', async (req, res) => {
+  // Get all restaurants from the database
   try {
     const restaurantData = await Restaurant.findAll();
     const restaurants = restaurantData.map(restaurant => restaurant.get({
@@ -58,7 +62,6 @@ router.get('/browse', async (req, res) => {
   }
 
 });
-
 
 // Endpoint to render the selectMonkey page with all SpaceMonkeys
 router.get('/selectMonkey', async (req, res) => {
@@ -73,25 +76,25 @@ router.post('/api/orders/create', async (req, res) => {
   // Get the user id from the session
   const user_id = req.session.user_id;
   try {
+    // Create a new order with the user id, burger id and spacemonkey id
     const order = await Order.create({ user_id: user_id, burger_id: burger_id, spacemonkey_id: spacemonkey_id });
     res.status(200).json(order);
   } catch (err) {
-    console.log(err);
     res.status(500).json(err.message);
   }
 });
 
 
-
+// Endpoint to create a new review in the database
 router.post('/api/reviews', async (req, res) => {
   const { burger_id, reviewDetails } = req.body;
   // Get the user id from the session
   const user_id = req.session.user_id;
   try {
+    // Create a new review
     const review = await Review.create({ user_id: user_id, burger_id: burger_id, reviewDetails: reviewDetails });
     res.status(200).json(review);
   } catch (err) {
-    console.log(err);
     res.status(500).json(err.message);
   }
 });
@@ -113,9 +116,7 @@ router.get('/orders/confirmation/:id', async (req, res) => {
     ],
   });
 
-  // console.log(orderData);
   const order = orderData.get({ plain: true });
-  console.log(order);
   // render orderConfirmation with the new order info.
   res.render('orderConfirmation', { order });
 });
@@ -125,6 +126,7 @@ router.get('/orders/tracking', (req, res) => {
   res.render('orderTracking');
 });
 
+// Endpoint to show the restaurant page with the burgers of the restaurant
 router.get('/restaurants/:restaurantId', async (req, res) => {
   try {
     const restaurantId = req.params.restaurantId;
@@ -138,8 +140,6 @@ router.get('/restaurants/:restaurantId', async (req, res) => {
     if (!restaurant) {
       res.status(404).send('Restaurant not found');
     }
-
-    console.log(restaurant);
 
     // Render restaurant page
     res.render('restaurant', { restaurant: restaurant.toJSON() });
@@ -158,8 +158,8 @@ router.get('/orderComplete', async (req, res) => {
   });
 
   const latestOrderData = latestOrder.get({ plain: true });
-  console.log(latestOrderData);
 
+  // Get the last 10 orders
   const pastOrders = await Order.findAll({
     where: { user_id: user_id },
     order: [['createdAt', 'DESC']],
@@ -168,7 +168,6 @@ router.get('/orderComplete', async (req, res) => {
   });
 
   const pastOrdersData = pastOrders.map((order) => order.get({ plain: true }));
-  console.log(pastOrdersData);
 
   res.render('orderComplete', { latestOrderData, pastOrdersData });
 });
@@ -184,7 +183,6 @@ router.get('/review', async (req, res) => {
   const reviews = reviewdbres.map((review) => review.get({ plain: true }));
   const burgers = burgerdbres.map((burger) => burger.get({ plain: true }));
 
-  console.log(reviews);
   res.render('reviews', { reviews, burgers });
 
 });

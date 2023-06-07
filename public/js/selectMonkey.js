@@ -1,10 +1,12 @@
+// A function to populate data to and to create individual buttons in order for users to select their very own Space Monkey!
+
 const selectMonkeyBtns = document.querySelectorAll('.select-monkey-button');
 
 selectMonkeyBtns.forEach((btn) => {
   btn.addEventListener('click', async (e) => {
     // Get the spacemonkeyId from the button's data-id attribute
     const spacemonkey_id = e.target.getAttribute('data-id');
-    const burger_id = localStorage.getItem('burgerId');
+    const burger_id = localStorage.getItem('burger_id');
     const response = await fetch('/api/orders/create', {
       method: 'POST',
       headers: {

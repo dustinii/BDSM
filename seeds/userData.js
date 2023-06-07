@@ -1,3 +1,5 @@
+// This seed has sample user data for testing purposes
+
 const { User } = require('../models');
 
 const userData = [

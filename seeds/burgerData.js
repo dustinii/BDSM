@@ -1,3 +1,5 @@
+// This file contains seed data for burgers that customers can order, along with their respective restaurant IDs. There are six restaurants with four burgers at each restaurant, for a total of 24 burgers.
+
 const { Burger } = require('../models');
 
 const burgerData = [

@@ -1,3 +1,5 @@
+// This file contains seed data for the developers (who, unlike the Space Monkeys, can be communicated with!) In addition to dedicated images, links to the GitHub accounts are also present.
+
 const { Developer } = require('../models');
 
 const developerData = [
