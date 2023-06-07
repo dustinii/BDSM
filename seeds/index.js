@@ -1,3 +1,5 @@
+// index.js file which is run to seed the entire database, seeding the developers, restaurants, burgers, Space Monkeys, reviews, and users.
+
 const sequelize = require('../config/connection');
 const seedDevelopers = require('./developerData');
 const seedRestaurants = require('./restaurantData');
