@@ -6,14 +6,13 @@ const seedSpacemonkeys = require('./spacemonkeyData');
 const seedReviews = require('./reviewData');
 const seedUsers = require('./userData');
 
+// Function to seed all of the data for the site before running it for the first time
 const seedAll = async () => {
   await sequelize.sync({ force: true });
   console.log('\n----- DATABASE SYNCED -----\n');
 
   await seedDevelopers();
   console.log('\n----- DEVELOPERS SEEDED -----\n');
-
-  // seed additional tables here as needed
   
   await seedSpacemonkeys();
   console.log('\n----- SPACEMONKEYS SEEDED -----\n');
