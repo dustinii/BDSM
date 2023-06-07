@@ -1,3 +1,4 @@
+<!-- Handlebars Page Comments -->
 <section class="section">
     <div class="container">
         <div class="columns is-centered">
@@ -38,10 +39,15 @@
                     </div>
                 </div>
             </div>
-<script src="/js/redirect.js"></script>
+        </div>
+    </div>
+</section>
 
+<!-- JavaScript Imports -->
+<script src="/js/redirect.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
+    // Generate QR code
     new QRCode(document.getElementById("qrcode-container"), {
         text: window.location.href,
         width: 128,
