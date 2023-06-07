@@ -1,10 +1,13 @@
+```handlebars
+<!-- Handlebars Page Comments -->
 <section class="section">
   <div class="container">
     <h1 class="title is-1 has-text-centered toptitle">Checkout the Amazing Reviews</h1>
-    
+
     {{#each reviews as |review|}}
     <div class="box mb-5">
       <div class="media-content has-text-centered">
+
         <p class="subtitle is-5">Review ID #42069{{review.id}}</p>
         <p class="subtitle is-5">Review for: {{review.burger.name}}</p>
         <div class="content">
@@ -35,7 +38,8 @@
         <div class="field">
           <label class="label" for="review">Review</label>
           <div class="control">
-            <textarea class="textarea" placeholder="Enter your review here..." id="reviewDetails" name="review" required></textarea>
+            <textarea class="textarea" placeholder="Enter your review here..." id="reviewDetails" name="review"
+              required></textarea>
           </div>
         </div>
         <div class="field">
@@ -48,4 +52,6 @@
   </aside>
 </section>
 
+<!-- JavaScript Import -->
 <script src="/js/addReview.js"></script>
+```

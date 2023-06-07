@@ -5,12 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Burgers Delivered by Space Monkeys</title>
+  <!-- Bulma CSS framework -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <!-- Font Awesome icons -->
   <script src="https://kit.fontawesome.com/3c022f789e.js" crossorigin="anonymous"></script>
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
+  <!-- Navigation bar -->
   <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
@@ -27,6 +31,7 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
+        <!-- Navigation links -->
         <a class="navbar-item" href="/browse">| FIND FOODZ |</a>
         <a class="navbar-item" href="/spacemonkeys">| HANDSOME MONKEYS |</a>
         <a class="navbar-item" href="/developers">| DEVELOPERS |</a>
@@ -36,18 +41,22 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
+            <!-- Include the auth buttons -->
             {{> auth-buttons}}
           </div>
         </div>
       </div>
+    </div>
   </nav>
 
+  <!-- Welcome section -->
   <section id="welcomepage" class="section container is-centered">
     <div class="container is-centered">
-      {{{body}}}
+      {{{body}}} <!-- Placeholder for dynamic content -->
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer custom-footer">
     <div class="content has-text-centered">
       <p>
@@ -56,7 +65,26 @@
     </div>
   </footer>
 
-  <script src="/js/hamburger-nav.js"></script>
+  <!-- JavaScript code -->
+  <script>
+    // Toggle the navbar burger on click
+    document.addEventListener('DOMContentLoaded', () => {
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach($el => {
+          $el.addEventListener('click', () => {
+            const target = $el.dataset.target;
+            const $target = document.getElementById(target);
+            $el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
+        });
+      }
+    });
+  </script>
+  
+  <!-- Conditionally include logout.js script if user is logged in -->
+
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
