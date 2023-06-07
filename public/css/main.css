@@ -1,7 +1,4 @@
-/* USE THIS TO HELP VISUALIZE DIVS */
-/* * {
-	outline: red dashed 2px;
-} */
+/* CSS styling is universal throughout the entire application */
 
 body {
 	background: linear-gradient(to top, #f5f5f5, #363636);

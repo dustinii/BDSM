@@ -1,3 +1,5 @@
+// Universal function for all order buttons, uses the forEach method to populate each button with an ID unique to the data that is put into an individual order
+
 document.querySelectorAll('.order-button').forEach(button => {
   button.addEventListener('click', (e) => {
     const selectedBurgerid = e.target.getAttribute('data-id');

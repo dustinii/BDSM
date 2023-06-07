@@ -1,3 +1,5 @@
+// This seed file contains data on the Space Monkeys themselves. Each Space Monkey has a name, image, and bio text.
+
 const { Spacemonkey } = require('../models');
 
 const spacemonkeyData = [

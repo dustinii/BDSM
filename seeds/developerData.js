@@ -1,3 +1,5 @@
+// This file contains seed data for the developers (who, unlike the Space Monkeys, can be communicated with!) In addition to dedicated images, links to the GitHub accounts are also present.
+
 const { Developer } = require('../models');
 
 const developerData = [
@@ -11,7 +13,7 @@ const developerData = [
     name: 'Paul K',
     image: '/images/developers/profpaul.jpg',
     github_link: 'https://github.com/pk50sshowa',
-    bio: 'A dedicated developer specializing in backend technologies, with a background in communications to help spread the message of the space monkeys!',
+    bio: 'A developer working on the back-end with a background in communications.',
   },
   {
     name: 'Jocelyn V',

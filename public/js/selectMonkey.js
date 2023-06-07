@@ -1,3 +1,5 @@
+// A function to populate data to and to create individual buttons in order for users to select their very own Space Monkey!
+
 const selectMonkeyBtns = document.querySelectorAll('.select-monkey-button');
 
 selectMonkeyBtns.forEach((btn) => {
