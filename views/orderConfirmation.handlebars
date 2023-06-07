@@ -11,26 +11,23 @@
                             <p>Thank you for placing your order with us. Here are the details of your order:</p>
                             <hr>
                             <ul>
-                                <li><strong><i class="fa-solid fa-burger"></i> Burger:</strong> {{order.burger.name}}</li>
-                                <li><strong><i class="fa-solid fa-user-astronaut"></i> SpaceMonkey:</strong> {{order.spacemonkey.name}}</li>
+                                <li><strong><i class="fa-solid fa-burger"></i> Burger:</strong> {{order.burger.name}}
+                                </li>
+                                <li><strong><i class="fa-solid fa-user-astronaut"></i> SpaceMonkey:</strong>
+                                    {{order.spacemonkey.name}}</li>
                                 <li><strong><i class="fa-solid fa-list"></i> Order ID:</strong> #42069{{order.id}}</li>
-                                <li><strong><i class="fa-solid fa-calendar-days"></i> Order Placed On:</strong> {{format_date order.createdAt}}</li>
+                                <li><strong><i class="fa-solid fa-calendar-days"></i> Order Placed On:</strong>
+                                    {{format_date order.createdAt}}</li>
                             </ul>
                             <hr>
-                            <p>Your order is currently being prepared and will be on its way soon. You can track the progress of your order by clicking on the "Track My Order" button below.</p>
-                            <button class="button is-primary is-fullwidth mt-4" onclick="window.location.href='/orders/tracking'">Track My Order</button>
+                            <p>Your order is currently being prepared and will be on its way soon. You can track the
+                                progress of your order by clicking on the "Track My Order" button below.</p>
+                            <button class="button is-primary is-fullwidth mt-4"
+                                onclick="window.location.href='/orders/tracking'">Track My Order</button>
                             <br>
                             <p>Here is your order's QR Code:</p>
                             <br>
-            <div id="qrcode-container"></div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-            <script>
-                new QRCode(document.getElementById("qrcode-container"), {
-                    text: window.location.href,
-                    width: 128,
-                    height: 128
-                });
-            </script>
+                            <div id="qrcode-container"></div>
                         </div>
                     </div>
                     <div class="column is-3">
@@ -54,3 +51,12 @@
         </div>
     </div>
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+    new QRCode(document.getElementById("qrcode-container"), {
+        text: window.location.href,
+        width: 128,
+        height: 128
+    });
+</script>
+<script src="/js/redirect.js"></script>
