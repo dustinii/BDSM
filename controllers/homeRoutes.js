@@ -57,7 +57,6 @@ router.get('/browse', async (req, res) => {
 
 });
 
-
 // Endpoint to render the selectMonkey page with all SpaceMonkeys
 router.get('/selectMonkey', async (req, res) => {
   const dbres = await Spacemonkey.findAll();
