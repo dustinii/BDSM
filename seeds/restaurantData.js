@@ -1,3 +1,5 @@
+// Seed file for restaurant data, with each restaurant having a name, image, and description. There are a total of six restaurants.
+
 const { Restaurant } = require('../models');
 
 const restaurantData = [

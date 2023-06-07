@@ -5,8 +5,6 @@ const { Developer, Spacemonkey, Restaurant, Burger, Order, Review } = require('.
 
 router.get('/', async (req, res) => {
   if (req.session.logged_in) {
-    console.log('logged in');
-    console.log(req.session.user_id);
   } else {
     console.log('not logged in');
   }
@@ -59,7 +57,6 @@ router.get('/browse', async (req, res) => {
 
 });
 
-
 // Endpoint to render the selectMonkey page with all SpaceMonkeys
 router.get('/selectMonkey', async (req, res) => {
   const dbres = await Spacemonkey.findAll();
@@ -76,7 +73,6 @@ router.post('/api/orders/create', async (req, res) => {
     const order = await Order.create({ user_id: user_id, burger_id: burger_id, spacemonkey_id: spacemonkey_id });
     res.status(200).json(order);
   } catch (err) {
-    console.log(err);
     res.status(500).json(err.message);
   }
 });
@@ -91,7 +87,6 @@ router.post('/api/reviews', async (req, res) => {
     const review = await Review.create({ user_id: user_id, burger_id: burger_id, reviewDetails: reviewDetails });
     res.status(200).json(review);
   } catch (err) {
-    console.log(err);
     res.status(500).json(err.message);
   }
 });
@@ -113,9 +108,7 @@ router.get('/orders/confirmation/:id', async (req, res) => {
     ],
   });
 
-  // console.log(orderData);
   const order = orderData.get({ plain: true });
-  console.log(order);
   // render orderConfirmation with the new order info.
   res.render('orderConfirmation', { order });
 });
@@ -139,8 +132,6 @@ router.get('/restaurants/:restaurantId', async (req, res) => {
       res.status(404).send('Restaurant not found');
     }
 
-    console.log(restaurant);
-
     // Render restaurant page
     res.render('restaurant', { restaurant: restaurant.toJSON() });
   } catch (err) {
@@ -158,7 +149,6 @@ router.get('/orderComplete', async (req, res) => {
   });
 
   const latestOrderData = latestOrder.get({ plain: true });
-  console.log(latestOrderData);
 
   const pastOrders = await Order.findAll({
     where: { user_id: user_id },
@@ -168,7 +158,6 @@ router.get('/orderComplete', async (req, res) => {
   });
 
   const pastOrdersData = pastOrders.map((order) => order.get({ plain: true }));
-  console.log(pastOrdersData);
 
   res.render('orderComplete', { latestOrderData, pastOrdersData });
 });
@@ -184,7 +173,6 @@ router.get('/review', async (req, res) => {
   const reviews = reviewdbres.map((review) => review.get({ plain: true }));
   const burgers = burgerdbres.map((burger) => burger.get({ plain: true }));
 
-  console.log(reviews);
   res.render('reviews', { reviews, burgers });
 
 });

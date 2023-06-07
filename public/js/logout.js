@@ -1,3 +1,5 @@
+// Asynchronous function to handle logouts, which can be selected at any time from the top navigation bar
+
 const logout = async () => {
   const response = await fetch('/api/users/logout', {
     method: 'POST',

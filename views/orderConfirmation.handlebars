@@ -19,6 +19,18 @@
                             <hr>
                             <p>Your order is currently being prepared and will be on its way soon. You can track the progress of your order by clicking on the "Track My Order" button below.</p>
                             <button class="button is-primary is-fullwidth mt-4" onclick="window.location.href='/orders/tracking'">Track My Order</button>
+                            <br>
+                            <p>Here is your order's QR Code:</p>
+                            <br>
+            <div id="qrcode-container"></div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+            <script>
+                new QRCode(document.getElementById("qrcode-container"), {
+                    text: window.location.href,
+                    width: 128,
+                    height: 128
+                });
+            </script>
                         </div>
                     </div>
                     <div class="column is-3">
