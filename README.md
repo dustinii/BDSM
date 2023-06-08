@@ -7,6 +7,9 @@
 
 Welcome to "Burgers Delivered by Space Monkeys" (BDSM)! This is a whimsical and interactive web application that allows users to order delicious burgers delivered by our adorable space monkey couriers.
 
+## DEPLOYED URL
+https://polar-cove-07937.herokuapp.com/
+
 ## SCREENSHOT
 ![Screenshot](screenshot.jpg)
 
@@ -55,10 +58,10 @@ To get started with the project, follow these steps:
 
 1. Clone the repository: `git clone <repository-url>`
 2. Install the dependencies: `npm install`
-3. Set up the database: Create a MySQL database and configure the connection in `config/config.json`.
+3. Set up the database: Create a MySQL database and configure the connection in `config/config.json`. Alternatively, you can use the command `npm seed` to seed the database using our test data.
 4. Set up environment variables: Update the environment variables in a `.env` file or configure them directly in your hosting environment.
-5. Run the application: `npm start`
-6. Open your web browser and navigate to `http://localhost:3000` to access the application.
+5. Run the application: `npm run start`
+6. Open your web browser and navigate to `http://localhost:3001` to access the application.
 
 ## [Folder structure](#folder-structure)
 
