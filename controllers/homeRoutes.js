@@ -1,11 +1,13 @@
 const router = require('express').Router();
-const { restart } = require('nodemon');
+// const { restart } = require('nodemon');
 const { Developer, Spacemonkey, Restaurant, Burger, Order, Review } = require('../models');
 // const withAuth = require('../utils/auth');
 
 // Endpoint to render the homepage
 router.get('/', async (req, res) => {
   if (req.session.logged_in) {
+    res.redirect('/');
+    return;
   } else {
     console.log('not logged in');
   }
@@ -149,7 +151,7 @@ router.get('/restaurants/:restaurantId', async (req, res) => {
 });
 
 // Endpoint to show the order confirmation page with the latest order and the last 10 orders
-router.get('/orderComplete', async (req, res) => {
+router.get('/orders/orderComplete', async (req, res) => {
   const user_id = req.session.user_id;
   const latestOrder = await Order.findOne({
     where: { user_id: user_id },
