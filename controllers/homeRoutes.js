@@ -5,12 +5,6 @@ const { Developer, Spacemonkey, Restaurant, Burger, Order, Review } = require('.
 
 // Endpoint to render the homepage
 router.get('/', async (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-  } else {
-    console.log('not logged in');
-  }
   try {
     res.render('homepage', { logged_in: req.session.logged_in });
   } catch (err) {
